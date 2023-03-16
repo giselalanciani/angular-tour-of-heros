@@ -18,7 +18,19 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
-    return {heroes};
+
+    const marvel = [
+      { id: 1, name: 'Hulk' },
+      { id: 3, name: 'AntMan' },
+      { id: 4, name: 'Thor' },
+      { id: 5, name: 'Iron Man' },
+      { id: 6, name: 'Black Panter' },
+      { id: 7, name: 'Captain America' },
+    ]
+    return {
+      heroes,
+      marvel
+    };
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
@@ -26,7 +38,7 @@ export class InMemoryDataService implements InMemoryDbService {
   // the method below returns the initial number (11).
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
-  genId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
-  }
+  // genId(heroes: Hero[]): number {
+  //   return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
+  // }
 }
