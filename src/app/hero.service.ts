@@ -44,6 +44,20 @@ export class HeroService {
     );
   }
 
+  getDCHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>('api/dc').pipe(
+      tap((_) => this.log('fetched dc heroes')),
+      catchError(this.handleError<Hero[]>('getDcHeroes', []))
+    );
+  }
+
+  getDcHero(id: number): Observable<Hero> {
+    const url = `api/dc/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap((_) => this.log(`fetched dc hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getDcHeroe id=${id}`))
+    );
+  }
 
   /** GET Topheroes from the server */
   getTopHeroes(): Observable<Hero[]> {
@@ -52,7 +66,6 @@ export class HeroService {
         const topHeroes = data.slice(1, 5);
         this.log('fetched Top heroes');
         return topHeroes;
-
       }),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );

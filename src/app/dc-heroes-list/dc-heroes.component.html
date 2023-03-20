@@ -1,0 +1,8 @@
+<h2>DC Heroes</h2>
+<ul class="dc">
+  <li *ngFor="let hero of dc$ | async">
+    <a routerLink="/dc/{{ hero.id }}">
+      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </a>
+  </li>
+</ul>

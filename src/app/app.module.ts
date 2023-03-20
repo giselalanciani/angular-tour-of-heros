@@ -11,11 +11,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesComponent } from './heroes-list/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
-import { MarvelComponent } from './marvel/marvel.component';
+import { MarvelComponent } from './marvel-list/marvel.component';
 import { MarvelDetailComponent } from './marvel-detail/marvel-detail.component';
+import { DcHeroesComponent } from './dc-heroes-list/dc-heroes.component';
+import { DcDetailComponent } from './dc-detail/dc-detail.component';
 
 @NgModule({
   imports: [
@@ -39,7 +41,9 @@ import { MarvelDetailComponent } from './marvel-detail/marvel-detail.component';
     MessagesComponent,
     HeroSearchComponent,
     MarvelComponent,
-    MarvelDetailComponent
+    MarvelDetailComponent,
+    DcHeroesComponent,
+    DcDetailComponent
   ],
   bootstrap: [ AppComponent ]
 })
