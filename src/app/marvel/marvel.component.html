@@ -1,9 +1,0 @@
-<h2>Marvel Heroes</h2>
-
-<ul class="marvel">
-  <li *ngFor="let hero of marvel$ | async">
-    <a routerLink="/marvel/{{ hero.id }}">
-      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-    </a>
-  </li>
-</ul>
